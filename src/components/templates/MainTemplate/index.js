@@ -1,25 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Route, Switch } from 'react-router-dom'
 
-import { MainContainer, MainContent, SideBarcontainer } from './styles'
+import { MainContainer, MainContent } from './styles'
 
 import { Toolbar } from './../../organism/Toolbar'
+import { Sidebar } from './../../organism/Sidebar'
+
+import { Routes } from './../../../utils/Routes'
 
 export const MainTemplate = () => {
+  const [isSideBarOpen, setIsSidebarOpen] = useState()
+  const [sidebarWidth, setSidebarWidth] = useState(0)
+
   return (
-    <div>
-      <Toolbar/>
+    <>
+      <Toolbar handleSidebar= {() => setIsSidebarOpen(!isSideBarOpen)} isOpen={isSideBarOpen}/>
       <MainContainer>
-        <SideBarcontainer style={{
-          width: 330,
-          boxShadow: '0 0 24px 0 rgba(0, 0, 0, 0.12)',
-          height: 'calc(100vh - 104px)'
-        }}>
-          Sidebar
-        </SideBarcontainer>
-        <MainContent>
-          Content
+        <Sidebar setSidebarWidth={setSidebarWidth} isOpen={isSideBarOpen}/>
+        <MainContent sidebarWidth={sidebarWidth}>
+          <Switch>
+            <Route exact path={Routes.shipment.path} render={() => { return <div>Content</div> }}/>
+          </Switch>
         </MainContent>
       </MainContainer>
-    </div>
+    </>
   )
 }

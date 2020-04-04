@@ -10,12 +10,5 @@ export const MainContainer = styled.div`
 `
 
 export const MainContent = styled.div`
-  width:calc(100% - 330px);
-`
-
-export const SideBarcontainer = styled.div`
-  display:flex;
-  ${media.largeTablet`
-    display:none;
-  `}
+  width: ${props => `calc(100% - ${props.sidebarWidth}px)`};
 `

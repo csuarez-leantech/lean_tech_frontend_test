@@ -10,34 +10,36 @@ export const ToolbarContainer = styled.header`
   position:fixed;
   background-color: ${Colors.ACCENT_COLOR};
   p{
-    display:none;
-  }
+      color:#ffffff;
+      font-size:20px;
+      margin-left:20px;
+      line-height:1.5;
+      text-transform:uppercase;
+    }
   button{
-    
+    &:first-child{
+        padding:0 40px;
+      }
     &:last-child{
       display:none;
     }
   }
   ${media.phone`
     height:64px;
-    p{
-      display:block;
-      color:#ffffff;
-      font-size:20px;
-      font-weight:600;
-      margin:0;
-      line-height:1.5;
-    }
     img{
-      display:none;
+      width:35px!important;
     }
     button{
       &:first-child{
-        padding:0 24px!important;
+        padding:0 24px;
+        padding-right:15px;
       }
       &:last-child{
         display:block;
       }
+    }
+    p{
+      font-size:20px!important;
     }
   `}
   

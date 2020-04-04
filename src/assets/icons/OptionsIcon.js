@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Colors } from './../../utils/Colors'
 
-const OptionsIcon = (props) => {
+const Icon = (props) => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -17,10 +17,10 @@ const OptionsIcon = (props) => {
   )
 }
 
-OptionsIcon.propTypes = {
+Icon.propTypes = {
   color: PropTypes.string,
   height: PropTypes.number,
   width: PropTypes.number
 }
 
-export default OptionsIcon
+export default Icon

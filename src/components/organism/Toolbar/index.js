@@ -1,21 +1,27 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import { ToolbarContainer } from './styles'
 
 import { IconButton } from './../../molecules/IconButton'
 import { Image } from './../../atoms/Image'
-export const Toolbar = () => {
+import { Text } from './../../atoms/Text'
+
+export const Toolbar = (props) => {
+  console.log(props.isOpen)
   return (
-    <ToolbarContainer>
+    <ToolbarContainer >
       <IconButton
-        iconName='MENU'
+        onClick={props.handleSidebar}
+        iconName={props.isOpen ? 'MENU_CLOSE' : 'MENU'}
         iconWidth={30}
         iconColor='PRIMARY_COLOR'
         buttonStyle={{
-          padding: '0 40px'
-        }}/>
-      <Image imageName='LEAN_TECH_LOGO' style={{ width: 220 }}/>
-      <p>Lean Text</p>
+          margin: props.isOpen ? '0 2.5px' : 0
+        }}
+      />
+      <Image imageName='LEAN_TECH_LOGO' style={{ width: 45 }}/>
+      <Text style={{ fontFamily: 'Viga', fontSize: 33 }}>LeanTech</Text>
       <IconButton
         iconName='OPTIONS'
         iconWidth={30}
@@ -26,4 +32,9 @@ export const Toolbar = () => {
         }}/>
     </ToolbarContainer>
   )
+}
+
+Toolbar.propTypes = {
+  handleSidebar: PropTypes.func,
+  isOpen: PropTypes.bool
 }
