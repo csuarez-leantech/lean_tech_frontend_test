@@ -8,7 +8,6 @@ import { Image } from './../../atoms/Image'
 import { Text } from './../../atoms/Text'
 
 export const Toolbar = (props) => {
-  console.log(props.isOpen)
   return (
     <ToolbarContainer >
       <IconButton

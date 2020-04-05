@@ -5,6 +5,7 @@ import { MainContainer, MainContent } from './styles'
 
 import { Toolbar } from './../../organism/Toolbar'
 import { Sidebar } from './../../organism/Sidebar'
+import { ShipmentList } from './../../../pages/ShipmentList'
 
 import { Routes } from './../../../utils/Routes'
 
@@ -19,7 +20,7 @@ export const MainTemplate = () => {
         <Sidebar setSidebarWidth={setSidebarWidth} isOpen={isSideBarOpen}/>
         <MainContent sidebarWidth={sidebarWidth}>
           <Switch>
-            <Route exact path={Routes.shipment.path} render={() => { return <div>Content</div> }}/>
+            <Route exact path={Routes.shipment.path} component={ShipmentList}/>
           </Switch>
         </MainContent>
       </MainContainer>

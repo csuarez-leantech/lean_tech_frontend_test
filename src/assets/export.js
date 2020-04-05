@@ -11,6 +11,8 @@ import SettingsIcon from './icons/SettingsIcon'
 import SettingsIconAlt from './icons/SettingsIconAlt'
 import ShipmentListIcon from './icons/ShipmentListIcon'
 import ShipmentListIconAlt from './icons/ShipmentListIconAlt'
+import SearchIcon from './icons/SearchIcon'
+import AddShipmentIcon from './icons/AddShipmentIcon'
 
 // Gets image path
 export const Images = {
@@ -31,5 +33,7 @@ export const Icons = {
   INVOICE_ICON: InvoiceIcon,
   INVOICE_ICON_ALT: InvoiceIconAlt,
   SETTINGS_ICON: SettingsIcon,
-  SETTINGS_ICON_ALT: SettingsIconAlt
+  SETTINGS_ICON_ALT: SettingsIconAlt,
+  SEARCH_ICON: SearchIcon,
+  ADD_SHIPMENT_ICON: AddShipmentIcon
 }
