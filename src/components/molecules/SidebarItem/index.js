@@ -10,7 +10,7 @@ import { Text } from './../../atoms/Text'
 const SidebarItemComponent = (props) => {
   return (
     <RouterLink path={props.path}>
-      <SidebarItemContainer isOpen={props.isOpen} isSelected={props.path.includes(props.location.pathname) }>
+      <SidebarItemContainer isOpen={props.isOpen} isSelected={(props.location.pathname === props.path) }>
         <Icon width={20} height={20} iconName={props.iconName}/>
         <Text>{props.label}</Text>
       </SidebarItemContainer>

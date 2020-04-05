@@ -4,7 +4,7 @@ import InputBase from '@material-ui/core/InputBase'
 
 const Input = (props) => {
   return (
-    <InputBase {...props} />
+    <InputBase {...props}/>
   )
 }
 

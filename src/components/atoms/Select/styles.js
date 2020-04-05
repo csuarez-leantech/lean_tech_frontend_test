@@ -14,14 +14,19 @@ const SelectMaterialUI = (props) => {
     setAnchorEl(event.currentTarget)
   }
 
+  const handleSelectedItem = (value) => {
+    props.onSelect(value)
+    handleClose()
+  }
+
   const handleClose = () => {
     setAnchorEl(null)
   }
-
   return (
-    <div className={props.className}>
+    <div className={props.className} style={props.style}>
       <Chip onDelete={handleClick}
-        label={props.value ? '' : props.placeholder}
+        onClick={handleClick}
+        label={props.selectedValue ? props.selectedValue : props.placeholder}
         deleteIcon={<ArrowDropDown/>}
       />
       <Menu
@@ -30,20 +35,24 @@ const SelectMaterialUI = (props) => {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <MenuItem onClick={handleClose}>Profile</MenuItem>
-        <MenuItem onClick={handleClose}>My account</MenuItem>
-        <MenuItem onClick={handleClose}>Logout</MenuItem>
+        {props.options.map((item, i) => {
+          return (
+            <MenuItem key={i} onClick={() => handleSelectedItem(item)}>{item}</MenuItem>
+          )
+        })}
       </Menu>
     </div>
   )
 }
 
 SelectMaterialUI.propTypes = {
-  value: PropTypes.string,
+  selectedValue: PropTypes.string,
   placeholder: PropTypes.string,
   className: PropTypes.string,
+  style: PropTypes.object,
   children: PropTypes.node,
-  options: PropTypes.array
+  options: PropTypes.array,
+  onSelect: PropTypes.func
 }
 
 SelectMaterialUI.defaultProps = {

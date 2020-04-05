@@ -7,12 +7,15 @@ export const ShipmentFilterContainer = styled.div`
 
 export const ShipmentFilterInputSection = styled.div`
   display:flex;
-  width:50%;
+  width:100%;
+  max-width:50%;
 `
 
 export const ShipmentFilterSelectSection = styled.div`
   display:flex;
   width:50%;
+  width:100%;
+  max-width:50%;
   justify-content:space-between;
   button{
     height:60px;

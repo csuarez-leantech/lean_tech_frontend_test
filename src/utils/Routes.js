@@ -2,7 +2,7 @@ export const Routes =
   {
     dashboard: {
       label: 'Dashboard',
-      path: '/dashboard',
+      path: '/',
       icon: 'DASHBOARD_ICON'
     },
     shipment: {
